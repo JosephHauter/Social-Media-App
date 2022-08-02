@@ -1,0 +1,19 @@
+body{
+  background-color: white;
+  
+}
+
+
+.header{
+  position: absolute;
+  background-color: lightblue;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+}
+
+.post-form{
+  width: 50%;
+  margin: 0 auto;
+}
