@@ -65,6 +65,7 @@ function listfeed(){
 
       const header1 = document.createElement('h6');
       header1.textContent = '@' + info.username;
+      header1.className= "text-primary";
 
       const posts = document.createElement('p');
       posts.textContent = info.post;
