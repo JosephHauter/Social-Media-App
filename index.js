@@ -1,4 +1,4 @@
-const express = require('express');
+const express = require('express');//framework that  helps manage servers
 const cors = require('cors');// eliminate communictaion error
 const app = express();//library
 const monk = require('monk')

@@ -17,19 +17,17 @@ btn.onclick = function () {
 listfeed();
 
 form.addEventListener('submit', (event)=>{
-  event.preventDefault();
+  event.preventDefault();//prevent what browser usually does when information submitted
   //grab info submitted
   const formData = new FormData(form);
   const name = formData.get('name');
   const username = formData.get('username');
   const post = formData.get('post');
-  const image = formData.get('image');
 
   const info = {//object
     name,
     username,
-    post,
-    image
+    post
   };
   console.log(info);
   fetch(API_URL, {//request data from server
@@ -49,14 +47,14 @@ form.addEventListener('submit', (event)=>{
 
 
 //once all inputs are filled and submit button is clicked
-//this function logs the data to mongoDB and displayed using html 
+//this function logs the data to mongoDB and displayed using html
 function listfeed(){
   feedElement.innerHTML = '';// blank what element was there
   fetch(API_URL)
-    .then(response=> response.json())
+    .then(response=> response.json())//give response back
     .then(feed=>{
     console.log(feed);
-    feed.reverse();
+    feed.reverse();//recent first
     feed.forEach(info=>{// for every element in array place on page
       const div = document.createElement('div');// create div
       div.className= "card darkmode my-3 p-3 shadow";
@@ -71,13 +69,11 @@ function listfeed(){
       const posts = document.createElement('p');
       posts.textContent = info.post;
 
-      // const date = document.createElement('small');
-      //   date.textContent = new Date(info.created);
 
       div.appendChild(header);
       div.appendChild(header1);
       div.appendChild(posts);
-      // div.appendChild(date);
+
 
       feedElement.appendChild(div);
     });
