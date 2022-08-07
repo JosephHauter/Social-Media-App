@@ -48,7 +48,8 @@ form.addEventListener('submit', (event)=>{
 });
 
 
-
+//once all inputs are filled and submit button is clicked
+//this function logs the data to mongoDB and displayed using html 
 function listfeed(){
   feedElement.innerHTML = '';// blank what element was there
   fetch(API_URL)
