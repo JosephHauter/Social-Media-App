@@ -30,15 +30,15 @@ form.addEventListener('submit', (event)=>{
     post
   };
   console.log(info);
-  fetch(API_URL, {//request data from server
-    method:'POST',
+  fetch(API_URL, {//make a request
+    method:'POST',//send data
     body: JSON.stringify(info),//turn object into something the server can understand
     headers:{ //what are we sending it
       'content-type':'application/json'//Sending an application
     }
   })
   .then(response =>response.json())//give response back
-    .then(createdFeed=>{
+    .then(createdFeed=>{//after this is done
       console.log(createdFeed);
       form.reset();//clear form
       listfeed();
