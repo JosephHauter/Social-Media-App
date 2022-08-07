@@ -50,7 +50,7 @@ form.addEventListener('submit', (event)=>{
 //this function logs the data to mongoDB and displayed using html
 function listfeed(){
   feedElement.innerHTML = '';// blank what element was there
-  fetch(API_URL)
+  fetch(API_URL)//make request to server
     .then(response=> response.json())//give response back
     .then(feed=>{
     console.log(feed);
