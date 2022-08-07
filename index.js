@@ -25,13 +25,14 @@ app.get('/feed',(req,res)=>{
   });
 });
 
+//This function makes sure the input fields are not empty
 function isValidFeed(val){
   return val.name && val.name.toString().trim() !== '' &&
     val.username && val.username.toString().trim() !== '' &&
     val.post && val.post.toString().trim() !== '';
 }
 
-
+//This is the proccess of the feed being created going through neccesary conditions
 app.post('/feed', (req, res)=>{
   if(isValidFeed(req.body)){//validate
     const info ={
