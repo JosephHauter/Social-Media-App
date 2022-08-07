@@ -58,7 +58,7 @@ function listfeed(){
     feed.reverse();
     feed.forEach(info=>{// for every element in array place on page
       const div = document.createElement('div');// create div
-      div.className= "card darkmode my-5 p-3 shadow";
+      div.className= "card darkmode my-3 p-3 shadow";
 
       const header = document.createElement('h3');
       header.textContent = info.name;
